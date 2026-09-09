@@ -1,0 +1,23 @@
+# !!! Python >= 3.10 REQUIRED (datatrove needs 3.10+). On 3.9, pip silently installs a
+# broken datatrove 0.0.1.dev0 stub. Use `python3.10 -m venv .venv` or newer.
+#
+# --- Data pipeline ---
+datatrove[processing,io]>=0.10.0  # HF's FineWeb pipeline: readers, filters, MinHash dedup
+datasets>=3.0.0                    # HuggingFace dataset loading (streaming)
+huggingface_hub>=0.26.0
+fasttext-wheel>=0.9.2              # language ID (lid.176) used by datatrove LanguageFilter
+indic-nlp-library>=0.92           # Devanagari normalization (optional but recommended)
+pyyaml>=6.0
+tqdm>=4.66
+numpy>=1.26
+
+# --- Tokenizer ---
+sentencepiece>=0.2.0
+tokenizers>=0.20.0
+
+# --- Training (from-scratch SmolLM) ---
+torch>=2.3
+transformers>=4.45
+accelerate>=1.0
+# flash-attn>=2.6      # optional, if your GPU supports it
+# wandb                # optional experiment tracking
